@@ -1,0 +1,15 @@
+{
+  "name": "ts-design-pattern",
+  "scripts": {
+    "format:fix": "prettier --write --ignore-path .gitignore .",
+    "test:run": "vitest run",
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "prettier": "^3.0.0",
+    "vite": "latest",
+    "vitest": "latest"
+  },
+  "author": "Nam Nguyen <nam.nguyen.node@gmail.com>",
+  "license": "MIT"
+}
