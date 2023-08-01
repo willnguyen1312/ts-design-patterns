@@ -9,9 +9,9 @@
  * The Target defines the domain-specific interface used by the client code.
  */
 class Target {
-    public request(): string {
-        return 'Target: The default target\'s behavior.';
-    }
+  public request(): string {
+    return "Target: The default target's behavior."
+  }
 }
 
 /**
@@ -20,9 +20,9 @@ class Target {
  * client code can use it.
  */
 class Adaptee {
-    public specificRequest(): string {
-        return '.eetpadA eht fo roivaheb laicepS';
-    }
+  public specificRequest(): string {
+    return ".eetpadA eht fo roivaheb laicepS"
+  }
 }
 
 /**
@@ -30,28 +30,30 @@ class Adaptee {
  * interface.
  */
 class Adapter extends Target {
-    private adaptee: Adaptee;
+  private adaptee: Adaptee
 
-    constructor(adaptee: Adaptee) {
-        super();
-        this.adaptee = adaptee;
-    }
+  constructor(adaptee: Adaptee) {
+    super()
+    this.adaptee = adaptee
+  }
 
-    public request(): string {
-        const result = this.adaptee.specificRequest().split('').reverse().join('');
-        return `Adapter: (TRANSLATED) ${result}`;
-    }
+  public request(): string {
+    const result = this.adaptee.specificRequest().split("").reverse().join("")
+    return `Adapter: (TRANSLATED) ${result}`
+  }
 }
 
-describe('Adapter', () => {
-    test('Should work', () => {
-        const target = new Target();
-        expect(target.request()).toBe('Target: The default target\'s behavior.');
+describe("Adapter", () => {
+  test("Should work", () => {
+    const target = new Target()
+    expect(target.request()).toBe("Target: The default target's behavior.")
 
-        const adaptee = new Adaptee();
-        expect(adaptee.specificRequest()).toBe('.eetpadA eht fo roivaheb laicepS');
+    const adaptee = new Adaptee()
+    expect(adaptee.specificRequest()).toBe(".eetpadA eht fo roivaheb laicepS")
 
-        const adapter = new Adapter(adaptee);
-        expect(adapter.request()).toBe('Adapter: (TRANSLATED) Special behavior of the Adaptee.');
-    });
+    const adapter = new Adapter(adaptee)
+    expect(adapter.request()).toBe(
+      "Adapter: (TRANSLATED) Special behavior of the Adaptee.",
+    )
+  })
 })

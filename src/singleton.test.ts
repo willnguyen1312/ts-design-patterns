@@ -1,7 +1,7 @@
 class Singleton {
   private static instance: Singleton
 
-  private constructor() { }
+  private constructor() {}
 
   public static getInstance(): Singleton {
     if (!Singleton.instance) {
@@ -11,7 +11,6 @@ class Singleton {
     return Singleton.instance
   }
 }
-
 
 test("Singleton should work as expected", () => {
   const instance1 = Singleton.getInstance()
